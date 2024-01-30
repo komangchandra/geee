@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hai Geeee</title>
+
+    <style>
+      body{
+        text-align: center;
+        font-family: Arial, sans-serif;
+        background: #ffcccc;
+        /* background-image: url(''); */
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        position: relative;
+      }
+      .pertanyaan{
+        margin-bottom: 10px;
+        margin-top: 50px;
+      }
+      .love-message{
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .btn{
+        padding: 10px 20px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      #yesBtn{
+        background-color: #4caf50;
+        color: white;
+      }
+      #noBtn{
+        background-color: brown;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="pertanyaan">Pertanyaan untuk gea</p>
+    <div class="love-message">
+      <p>Boleh minta PAP dari Kamu ga?</p>
+    </div>
+    <button id="yesBtn" class="btn">Yes</button>
+    <button id="noBtn" class="btn">No</button>
+  </body>
+
+  <script>
+    const loveMessage = document.querySelector('.love-message');
+    const yesButton = document.getElementById('yesBtn');
+    const noButton = document.getElementById('noBtn');
+
+    yesButton.addEventListener('click', function(){
+      loveMessage.innerHTML = "<p>Ok Gas, Kirim PAP</p>";
+      yesButton.style.display = "none"
+      noButton.style.display = 'none'
+    });
+
+    noButton.addEventListener('click', function(){
+      loveMessage.innerHTML = "<p>Pencet Yes Ga😡😡😡!</p>";
+      loveMessage.style.color = "black";
+      loveMessage.style.fontSize = "20px";
+      noButton.style.position = "absolute";
+      noButton.style.left = Math.random()* 80 + "vw";
+      noButton.style.top = Math.random()* 80 + "vh";
+    })
+  </script>
+</html>
